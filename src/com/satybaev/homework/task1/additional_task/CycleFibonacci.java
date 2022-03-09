@@ -1,4 +1,4 @@
-package com.satybaev.homework.additional_task;
+package com.satybaev.homework.task1.additional_task;
 
 public class CycleFibonacci {
     public static void main(String[] args) {

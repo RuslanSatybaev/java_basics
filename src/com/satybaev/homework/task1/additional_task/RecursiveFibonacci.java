@@ -1,4 +1,4 @@
-package com.satybaev.homework.additional_task;
+package com.satybaev.homework.task1.additional_task;
 
 public class RecursiveFibonacci {
     //f(n)=f(n-1) + f(n-2), причем f(0)=0, а f(1)=1
