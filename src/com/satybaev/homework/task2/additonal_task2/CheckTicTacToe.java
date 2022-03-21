@@ -15,27 +15,52 @@ public class CheckTicTacToe {
     private final BufferedReader reader;
     private String name;
     private Rating rating;
+    private int countRatingHuman;
+    private int countRatingComputer;
+    private String wordYesOrNo;
 
     public CheckTicTacToe() {
         random = new Random();
         reader = new BufferedReader(new InputStreamReader(System.in));
         table = new char[3][3];
         rating = new Rating();
-
+    }
+    public void game() throws IOException {
+        initTable();
+        writeName();
+        againPlay();
     }
 
-    public void game() {
-        initTable();
+    private void writeName() throws IOException {
         System.out.println("Please enter your name:");
-        try {
-            name = reader.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
+        name = reader.readLine();
+    }
+
+    private void againPlay() throws IOException {
+        while (true) {
+            playWhile();
+            printTable();
+            System.out.println("Want to play again? Write Yes or No");
+            wordYesOrNo = reader.readLine();
+            if (wordYesOrNo.equals("No")) {
+                System.out.println("Game over");
+                break;
+            }
+            if (wordYesOrNo.equals("Yes")) {
+                initTable();
+            }
         }
+        rating.writeRating(String.valueOf(countRatingComputer));
+        rating.writeRating(name);
+        rating.writeRating(String.valueOf(countRatingHuman));
+    }
+
+    private void playWhile() {
         while (true) {
             turnHuman();
             if (checkWin(SIGN_X)) {
                 System.out.println(name + " you win");
+                countRatingHuman++;
                 break;
             }
             if (isTableFull()) {
@@ -46,6 +71,7 @@ public class CheckTicTacToe {
             printTable();
             if (checkWin(SIGN_0)) {
                 System.out.println("Computer win");
+                countRatingComputer++;
                 break;
             }
             if (isTableFull()) {
@@ -53,9 +79,6 @@ public class CheckTicTacToe {
                 break;
             }
         }
-        System.out.println("Game over");
-        printTable();
-        rating.writeRating(name);
     }
 
     private void initTable() {
@@ -81,7 +104,6 @@ public class CheckTicTacToe {
         try {
             int x, y;
             do {
-
                 System.out.println(name + " Enter X and Y (1-3):");
                 int inputX = Integer.parseInt(reader.readLine());
                 int inputY = Integer.parseInt(reader.readLine());

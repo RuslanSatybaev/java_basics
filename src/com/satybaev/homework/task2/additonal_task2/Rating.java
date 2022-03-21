@@ -10,7 +10,7 @@ public class Rating {
         try {
             FileWriter writer = new FileWriter(filePath, true);
             BufferedWriter bufferWriter = new BufferedWriter(writer);
-            bufferWriter.write(text);
+            bufferWriter.write(text + "          ");
             bufferWriter.close();
         }
         catch (IOException e) {
