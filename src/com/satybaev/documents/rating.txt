@@ -1,2 +1,3 @@
-Name:                 Rating:
-Zabida
+Name:             Rating:
+Computer            4
+Ruslan              8
