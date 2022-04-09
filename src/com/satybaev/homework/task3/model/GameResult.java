@@ -10,6 +10,4 @@ public class GameResult {
     public void setWinPlayer(Player winPlayer) {
         this.winPlayer = winPlayer;
     }
-
-
 }

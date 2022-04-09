@@ -1,4 +1,4 @@
-package com.satybaev.homework.task3;
+package com.satybaev.homework.task3.parser;
 
 import com.satybaev.homework.task3.parser.StepName;
 

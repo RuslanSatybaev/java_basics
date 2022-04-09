@@ -1,3 +1,3 @@
 Name:             Rating:
 Computer            4
-Ruslan              8
+Ruslan              80          r          5          
